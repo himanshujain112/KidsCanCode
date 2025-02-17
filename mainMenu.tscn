@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://x1v0a0xuugs1"]
+[gd_scene load_steps=19 format=3 uid="uid://x1v0a0xuugs1"]
 
 [ext_resource type="Script" path="res://scenes/ui/white_bg.gd" id="1_uwikt"]
 [ext_resource type="Texture2D" uid="uid://bsh3sedyvig8e" path="res://assets/assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/2.png" id="2_pe4ri"]
@@ -14,58 +14,65 @@
 [ext_resource type="Texture2D" uid="uid://c5hakorcgjc4s" path="res://assets/assets/ButtonsText/ButtonText_Large_Round.png" id="11_6oggf"]
 [ext_resource type="FontFile" uid="uid://rw0lls2xhr1n" path="res://assets/assets/amorlate fonts2/Amorlate.ttf" id="12_1ot7x"]
 [ext_resource type="Texture2D" uid="uid://dh5fmy4f61rvq" path="res://assets/assets/ButtonsText/ButtonText_Large_Orange_Round.png" id="12_5o4br"]
+[ext_resource type="Texture2D" uid="uid://cheohivpdxq64" path="res://assets/assets/ButtonsText/ButtonText_Large_GreyOutline_Round.png" id="13_0s2t5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xx2k0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kwyjh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4a3h0"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="whiteBg" type="Parallax2D" parent="."]
-repeat_size = Vector2(1154, 0)
+scale = Vector2(0.68, 0.68)
+repeat_size = Vector2(770, 0)
 script = ExtResource("1_uwikt")
-metadata/_edit_lock_ = true
 
 [node name="Abstract-smooth-empty-grey-studio-well-use-as-backgroundbusiness-reportdigitalwebsite-templatebackdr" type="Sprite2D" parent="whiteBg"]
-position = Vector2(576, 327)
-scale = Vector2(0.2308, 0.216667)
+position = Vector2(564.941, 318.647)
+scale = Vector2(0.226376, 0.211098)
 texture = ExtResource("3_sejm5")
 metadata/_edit_lock_ = true
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
-repeat_size = Vector2(1154, 0)
+repeat_size = Vector2(770, 0)
 script = ExtResource("3_368wv")
-metadata/_edit_lock_ = true
 
 [node name="blueCloud1" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(930.588, 142.274)
-scale = Vector2(0.418709, 0.461269)
+position = Vector2(653, 101)
+scale = Vector2(0.321181, 0.29769)
 texture = ExtResource("2_pe4ri")
 metadata/_edit_lock_ = true
 
 [node name="blueCloud2" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(374.294, 324.637)
-scale = Vector2(0.507966, 0.477548)
+position = Vector2(130.75, 317.069)
+scale = Vector2(0.299479, 0.302046)
 texture = ExtResource("2_pe4ri")
 metadata/_edit_lock_ = true
 
 [node name="whiteCloud1" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(211.921, 115.097)
-scale = Vector2(1.64577, 1.75529)
+position = Vector2(105, 137)
+scale = Vector2(1.11288, 1.06563)
 texture = ExtResource("3_x4dk0")
 metadata/_edit_lock_ = true
 
 [node name="whiteCloud2" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(235, 492)
-scale = Vector2(2.98199, 3.69746)
+position = Vector2(615, 296)
+scale = Vector2(1.93997, 2.00663)
 texture = ExtResource("4_omdkk")
 metadata/_edit_lock_ = true
 
 [node name="whiteCloud3" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(844.253, 464.408)
-scale = Vector2(4.13146, 5.46603)
+position = Vector2(367, 87)
+scale = Vector2(2.23673, 2.79935)
 texture = ExtResource("5_338bm")
 metadata/_edit_lock_ = true
 
@@ -73,8 +80,8 @@ metadata/_edit_lock_ = true
 modulate = Color(1, 1, 1, 0.639216)
 self_modulate = Color(0.937255, 0.937255, 0.937255, 1)
 show_behind_parent = true
-position = Vector2(209, 380.5)
-scale = Vector2(0.304861, 0.53125)
+position = Vector2(90, 171.688)
+scale = Vector2(0.0888889, 0.132378)
 texture = ExtResource("9_7uhoj")
 metadata/_edit_lock_ = true
 
@@ -82,8 +89,8 @@ metadata/_edit_lock_ = true
 modulate = Color(1, 1, 1, 0.639216)
 self_modulate = Color(0.937255, 0.937255, 0.937255, 1)
 show_behind_parent = true
-position = Vector2(960, 183)
-scale = Vector2(0.146528, 0.233333)
+position = Vector2(621, 149)
+scale = Vector2(0.118403, 0.172917)
 texture = ExtResource("9_7uhoj")
 metadata/_edit_lock_ = true
 
@@ -91,36 +98,45 @@ metadata/_edit_lock_ = true
 modulate = Color(1, 1, 1, 0.639216)
 self_modulate = Color(0.937255, 0.937255, 0.937255, 1)
 show_behind_parent = true
-position = Vector2(792, 586)
-scale = Vector2(0.243705, 0.340183)
+position = Vector2(238.032, 488.034)
+scale = Vector2(0.2222, 0.298564)
 texture = ExtResource("9_7uhoj")
 metadata/_edit_lock_ = true
 
 [node name="menuRct" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 314.0
-offset_top = 188.0
-offset_right = 2556.0
-offset_bottom = 1821.0
-scale = Vector2(0.24, 0.24)
+offset_left = 215.0
+offset_top = 126.0
+offset_right = 2219.0
+offset_bottom = 1636.0
+scale = Vector2(0.18, 0.18)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("10_v7fi2")
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="menuRct"]
 layout_mode = 0
-offset_left = 221.0
-offset_top = -188.0
-offset_right = 2021.0
-offset_bottom = 1459.0
-theme_override_constants/margin_left = 250
-theme_override_constants/margin_top = 500
+offset_left = 155.556
+offset_top = 161.111
+offset_right = 1983.56
+offset_bottom = 1762.11
+scale = Vector2(0.9, 0.9)
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menuRct/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="TextureButton" type="TextureButton" parent="menuRct/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("10_yygaq")
+texture_pressed = ExtResource("10_yygaq")
+texture_hover = SubResource("CompressedTexture2D_xx2k0")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="menuRct/MarginContainer/VBoxContainer/TextureButton"]
 layout_mode = 0
@@ -135,10 +151,14 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("12_1ot7x")
 theme_override_font_sizes/font_size = 80
 text = "Start"
+metadata/_edit_lock_ = true
 
 [node name="TextureButton2" type="TextureButton" parent="menuRct/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("11_6oggf")
+texture_pressed = ExtResource("13_0s2t5")
+texture_hover = SubResource("CompressedTexture2D_kwyjh")
+metadata/_edit_lock_ = true
 
 [node name="Label2" type="Label" parent="menuRct/MarginContainer/VBoxContainer/TextureButton2"]
 layout_mode = 2
@@ -153,10 +173,13 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("12_1ot7x")
 theme_override_font_sizes/font_size = 80
 text = "Credits"
+metadata/_edit_lock_ = true
 
 [node name="TextureButton3" type="TextureButton" parent="menuRct/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("12_5o4br")
+texture_pressed = ExtResource("12_5o4br")
+texture_hover = SubResource("CompressedTexture2D_4a3h0")
 metadata/_edit_lock_ = true
 
 [node name="Label3" type="Label" parent="menuRct/MarginContainer/VBoxContainer/TextureButton3"]
@@ -177,11 +200,13 @@ vertical_alignment = 1
 
 [node name="mainMenuTxtRct" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 359.0
-offset_top = 140.0
-offset_right = 2221.0
-offset_bottom = 501.0
-scale = Vector2(0.24, 0.24)
+offset_left = 254.0
+offset_top = 106.0
+offset_right = 2116.0
+offset_bottom = 467.0
+scale = Vector2(0.15, 0.15)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("10_2exgb")
 
 [node name="Label4" type="Label" parent="mainMenuTxtRct"]
@@ -191,9 +216,9 @@ offset_top = 42.0
 offset_right = 951.0
 offset_bottom = 192.0
 scale = Vector2(2, 2)
-theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_color = Color(0.172833, 0.172833, 0.172833, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.152941, 0.152941, 0.152941, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.172549, 0.172549, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("12_1ot7x")
 theme_override_font_sizes/font_size = 100
