@@ -31,7 +31,7 @@ func _on_reset_button_pressed() -> void:
 
 func _on_obstacle_ahead() -> void:
 	
-	if player:
+	if gameCharacter:
 		get_node("player/Sprite2D").texture = preload("res://assets/images/big-pokeball.svg")
 	await get_tree().create_timer(1).timeout
 	get_tree().reload_current_scene()

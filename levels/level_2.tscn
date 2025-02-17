@@ -192,6 +192,16 @@ theme_override_font_sizes/font_size = 18
 text = "Press Show Button to Open 
           Commands Menu."
 
+[node name="instructions4" type="Label" parent="CanvasLayer"]
+offset_left = 462.0
+offset_top = 300.0
+offset_right = 747.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Reset Commands if not reached 
+          the Pokemon."
+
 [node name="CommandPanel" parent="." instance=ExtResource("5_6s3n2")]
 visible = false
 
