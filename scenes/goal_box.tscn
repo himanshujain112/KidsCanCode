@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://csxde0to81lqo"]
 
 [ext_resource type="Script" path="res://scripts/goal_box.gd" id="1_ay425"]
-[ext_resource type="Texture2D" uid="uid://npshlhw36pc" path="res://assets/vegeta.png" id="2_t1m72"]
+[ext_resource type="Texture2D" uid="uid://c47gvgb6dnnti" path="res://assets/images/pokemons/pikachu.svg" id="2_knfeq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8ib2"]
 size = Vector2(62, 62)
@@ -10,8 +10,7 @@ size = Vector2(62, 62)
 script = ExtResource("1_ay425")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_t1m72")
+texture = ExtResource("2_knfeq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x8ib2")
