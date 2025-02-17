@@ -13,6 +13,7 @@ var player
 var resetCommands = false
 
 func _ready() -> void:
+	current_level_index = 0
 	# Get the player node from the group "player"
 	player = get_tree().get_first_node_in_group("player")
 

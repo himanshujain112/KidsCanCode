@@ -1,21 +1,21 @@
-[gd_scene load_steps=16 format=4 uid="uid://cegm2df01dftx"]
+[gd_scene load_steps=16 format=4 uid="uid://voxboh1kye05"]
 
-[ext_resource type="Script" path="res://levels/level_1.gd" id="1_ft5fv"]
-[ext_resource type="Texture2D" uid="uid://cps71tbiuc50i" path="res://assets/images/wall.svg" id="1_y5ctp"]
-[ext_resource type="Texture2D" uid="uid://csdqxm1oq13fa" path="res://assets/images/tile.svg" id="2_idoff"]
-[ext_resource type="PackedScene" uid="uid://ckll7h3u7jlkk" path="res://scenes/player.tscn" id="3_m1174"]
-[ext_resource type="PackedScene" uid="uid://bvwghyw78amya" path="res://scenes/command_panel.tscn" id="4_ub7hi"]
-[ext_resource type="PackedScene" uid="uid://csxde0to81lqo" path="res://scenes/goal_box.tscn" id="6_3ex08"]
+[ext_resource type="Script" path="res://levels/level_2.gd" id="1_h3nls"]
+[ext_resource type="Texture2D" uid="uid://cps71tbiuc50i" path="res://assets/images/wall.svg" id="2_ns1bg"]
+[ext_resource type="Texture2D" uid="uid://csdqxm1oq13fa" path="res://assets/images/tile.svg" id="3_vxwg3"]
+[ext_resource type="PackedScene" uid="uid://ckll7h3u7jlkk" path="res://scenes/player.tscn" id="4_wff51"]
+[ext_resource type="PackedScene" uid="uid://bvwghyw78amya" path="res://scenes/command_panel.tscn" id="5_6s3n2"]
+[ext_resource type="PackedScene" uid="uid://csxde0to81lqo" path="res://scenes/goal_box.tscn" id="6_1ksg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxxok"]
-texture = ExtResource("1_y5ctp")
+texture = ExtResource("2_ns1bg")
 texture_region_size = Vector2i(72, 72)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36, -36, 36, -36, 36, 36, -36, 36)
 0:0/0/custom_data_0 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ww3b0"]
-texture = ExtResource("2_idoff")
+texture = ExtResource("3_vxwg3")
 texture_region_size = Vector2i(72, 72)
 0:0/0 = 0
 
@@ -129,8 +129,8 @@ _data = {
 "cmdPanelslideout": SubResource("Animation_lqth3")
 }
 
-[node name="level1" type="Node"]
-script = ExtResource("1_ft5fv")
+[node name="level2" type="Node"]
+script = ExtResource("1_h3nls")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -141,7 +141,7 @@ grow_vertical = 2
 color = Color(0.93385, 0.949374, 0.901976, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAQAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAAAAAAAAAAABAAIAAQAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAQAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_frb3t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -192,7 +192,7 @@ theme_override_font_sizes/font_size = 18
 text = "Press Show Button to Open 
           Commands Menu."
 
-[node name="CommandPanel" parent="." instance=ExtResource("4_ub7hi")]
+[node name="CommandPanel" parent="." instance=ExtResource("5_6s3n2")]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -200,10 +200,10 @@ libraries = {
 "": SubResource("AnimationLibrary_02gw0")
 }
 
-[node name="goalBox" parent="." instance=ExtResource("6_3ex08")]
-position = Vector2(180, 323)
+[node name="goalBox" parent="." instance=ExtResource("6_1ksg2")]
+position = Vector2(251, 254)
 
-[node name="player" parent="." instance=ExtResource("3_m1174")]
+[node name="player" parent="." instance=ExtResource("4_wff51")]
 position = Vector2(181, 109)
 tile_size = 72
 
