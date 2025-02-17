@@ -176,10 +176,10 @@ text = "Instructions"
 uppercase = true
 
 [node name="instructions2" type="Label" parent="CanvasLayer"]
-offset_left = 465.0
-offset_top = 163.0
-offset_right = 748.0
-offset_bottom = 208.0
+offset_left = 452.0
+offset_top = 256.0
+offset_right = 735.0
+offset_bottom = 301.0
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
 theme_override_fonts/font = ExtResource("4_cybu8")
 theme_override_font_sizes/font_size = 15
@@ -188,10 +188,10 @@ text = "Press Reset Button to restart
 horizontal_alignment = 1
 
 [node name="instructions3" type="Label" parent="CanvasLayer"]
-offset_left = 472.0
-offset_top = 257.0
-offset_right = 757.0
-offset_bottom = 316.0
+offset_left = 467.0
+offset_top = 155.0
+offset_right = 752.0
+offset_bottom = 214.0
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
 theme_override_fonts/font = ExtResource("4_cybu8")
 theme_override_font_sizes/font_size = 16

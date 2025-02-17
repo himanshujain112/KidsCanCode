@@ -50,8 +50,10 @@ func execute_next_command(index: int) -> void:
 			player.turn_left()
 		"Turn Right":
 			player.turn_right()
-		"Attack":
-			player.attack()
+		"Catch":
+			player.Catch()
+		"if wall":
+			player.ifwall()
 
 	# Wait 0.5 seconds before executing the next command
 	await get_tree().create_timer(0.5).timeout

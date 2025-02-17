@@ -30,9 +30,11 @@ func turn_right() -> void:
 	rotation += deg_to_rad(90)
 	print("Turning right")
 
-func attack() -> void:
+func Catch() -> void:
 	print("Attacking")
 
+func ifwall():
+	print("wall detected")
 func check_obstacle_ahead() -> bool:
 	var target_pos = position + facing * tile_size # Calculate the position ahead
 	var tile_pos = tilemap.local_to_map(target_pos) # Convert world position to tile coordinates

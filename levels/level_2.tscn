@@ -175,10 +175,10 @@ text = "Instructions"
 uppercase = true
 
 [node name="instructions2" type="Label" parent="CanvasLayer"]
-offset_left = 465.0
-offset_top = 151.0
-offset_right = 750.0
-offset_bottom = 210.0
+offset_left = 460.0
+offset_top = 231.0
+offset_right = 745.0
+offset_bottom = 290.0
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
 theme_override_fonts/font = ExtResource("4_ojv2o")
 theme_override_font_sizes/font_size = 15
@@ -187,10 +187,10 @@ the level."
 horizontal_alignment = 1
 
 [node name="instructions3" type="Label" parent="CanvasLayer"]
-offset_left = 468.0
-offset_top = 228.0
-offset_right = 739.0
-offset_bottom = 287.0
+offset_left = 460.0
+offset_top = 156.0
+offset_right = 747.0
+offset_bottom = 215.0
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
 theme_override_fonts/font = ExtResource("4_ojv2o")
 theme_override_font_sizes/font_size = 18

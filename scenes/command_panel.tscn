@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvwghyw78amya"]
+[gd_scene load_steps=15 format=3 uid="uid://bvwghyw78amya"]
 
 [ext_resource type="PackedScene" uid="uid://cvcmvav2amwoa" path="res://scenes/command_block.tscn" id="1_88lwd"]
 [ext_resource type="Script" path="res://scenes/available_commands.gd" id="1_a1sh3"]
@@ -63,6 +63,41 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8mwd"]
+bg_color = Color(0.392864, 0.368162, 0.264231, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sc4e"]
+bg_color = Color(0.266667, 0.360784, 0.819608, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw7ni"]
+bg_color = Color(0.533333, 0.564706, 0.717647, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.428934, 0.459806, 0.616992, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnbh5"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 2
@@ -94,9 +129,10 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 32.0
 offset_top = 49.0
-offset_right = 198.0
-offset_bottom = -11.0
+offset_right = 213.0
+offset_bottom = 7.0
 grow_vertical = 2
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_a1sh3")
 
 [node name="CommandBlock" parent="Panel/AvailableCommands" instance=ExtResource("1_88lwd")]
@@ -120,24 +156,45 @@ command = "Turn Right"
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dd88h")
-command = "Attack"
+command = "Catch"
 
 [node name="CommandBlock5" parent="Panel/AvailableCommands" instance=ExtResource("1_88lwd")]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8anda")
-command = "Condition"
+command = "if wall"
 
-[node name="ExecutableArea" type="VBoxContainer" parent="Panel"]
+[node name="CommandBlock6" parent="Panel/AvailableCommands" instance=ExtResource("1_88lwd")]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8mwd")
+command = "else"
+
+[node name="CommandBlock7" parent="Panel/AvailableCommands" instance=ExtResource("1_88lwd")]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3sc4e")
+command = "Repeat 1"
+
+[node name="Panel" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(0, 270)
+layout_mode = 2
+offset_left = 215.0
+offset_top = 57.0
+offset_right = 423.0
+offset_bottom = 327.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rw7ni")
+
+[node name="ExecutableArea" type="VBoxContainer" parent="Panel/Panel"]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -223.0
-offset_top = 46.0
-offset_right = -29.0
-offset_bottom = -49.0
+offset_left = -202.0
+offset_right = -3.0
+offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("2_u47ph")
@@ -161,15 +218,54 @@ text = "Execution Block"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.448
+anchor_right = 0.5
+offset_left = 10.672
+offset_top = 43.0
+offset_right = 63.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_e8ey8")
+theme_override_font_sizes/font_size = 10
+text = "main ():"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.448
+anchor_right = 0.5
+offset_left = -127.328
+offset_top = 341.0
+offset_right = 63.0
+offset_bottom = 355.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.204852, 0.0842299, 0.367177, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_e8ey8")
+theme_override_font_sizes/font_size = 12
+text = "Drag command to the command box
+"
+horizontal_alignment = 1
+uppercase = true
+
 [node name="Button" type="Button" parent="."]
-offset_left = 675.0
-offset_top = 368.0
-offset_right = 744.0
-offset_bottom = 399.0
+offset_left = 672.0
+offset_top = 375.0
+offset_right = 741.0
+offset_bottom = 406.0
 theme_override_colors/font_outline_color = Color(0.940636, 0.940636, 0.940636, 1)
 theme_override_constants/outline_size = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_qnbh5")
 text = "Run"
 icon = ExtResource("4_8a8ks")
 
-[connection signal="pressed" from="Button" to="Panel/ExecutableArea" method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Panel/Panel/ExecutableArea" method="_on_button_pressed"]
