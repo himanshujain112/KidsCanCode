@@ -27,6 +27,30 @@ custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_mxxok")
 sources/1 = SubResource("TileSetAtlasSource_ww3b0")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_886uo"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2c7y"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 4.0
+expand_margin_top = 3.0
+expand_margin_right = 4.0
+expand_margin_bottom = 3.0
+
 [sub_resource type="Animation" id="Animation_da0jt"]
 length = 0.001
 tracks/0/type = "value"
@@ -105,30 +129,6 @@ _data = {
 "cmdPanelslideout": SubResource("Animation_lqth3")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_886uo"]
-bg_color = Color(0, 0, 0, 1)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2c7y"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 4.0
-expand_margin_top = 3.0
-expand_margin_right = 4.0
-expand_margin_bottom = 3.0
-
 [node name="level1" type="Node"]
 script = ExtResource("1_ft5fv")
 
@@ -148,16 +148,6 @@ tile_set = SubResource("TileSet_frb3t")
 position = Vector2(181, 109)
 tile_size = 72
 
-[node name="CommandPanel" parent="." instance=ExtResource("4_ub7hi")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_02gw0")
-}
-
-[node name="goalBox" parent="." instance=ExtResource("6_3ex08")]
-position = Vector2(180, 323)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ExecuteButton" type="Button" parent="CanvasLayer"]
@@ -175,6 +165,47 @@ offset_right = 662.0
 offset_bottom = 36.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_b2c7y")
 text = " Reset "
+
+[node name="instructions" type="Label" parent="CanvasLayer"]
+offset_left = 529.0
+offset_top = 108.0
+offset_right = 674.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Instructions"
+uppercase = true
+
+[node name="instructions2" type="Label" parent="CanvasLayer"]
+offset_left = 465.0
+offset_top = 151.0
+offset_right = 750.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Press Reset Button to restart the 
+                         level."
+
+[node name="instructions3" type="Label" parent="CanvasLayer"]
+offset_left = 464.0
+offset_top = 233.0
+offset_right = 749.0
+offset_bottom = 292.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Press Show Button to Open 
+          Commands Menu."
+
+[node name="CommandPanel" parent="." instance=ExtResource("4_ub7hi")]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_02gw0")
+}
+
+[node name="goalBox" parent="." instance=ExtResource("6_3ex08")]
+position = Vector2(180, 323)
 
 [connection signal="pressed" from="CanvasLayer/ExecuteButton" to="." method="_on_execute_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ResetButton" to="." method="_on_reset_button_pressed"]
