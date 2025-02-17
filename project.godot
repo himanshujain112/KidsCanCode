@@ -18,13 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
+AudioManager="*res://scripts/audio_manager.gd"
 
 [display]
 
 window/size/viewport_width=778
 window/size/viewport_height=442
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/window_width_override=1200
+window/size/window_height_override=680
 window/stretch/mode="canvas_items"
 
 [gui]

@@ -8,12 +8,12 @@ var show = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.connect("executionStarted", hidethepanel)
-	GameManager.current_level_index = 2
+	GameManager.current_level_index = 5
 	levelLabel.text = "Level "+ str(GameManager.current_level_index)
 	command_panel.visible = false
 	GameManager.connect("obstacleAhead", Callable(self, "_on_obstacle_ahead"))
 	if is_instance_valid(enemySprite):
-		enemySprite.texture = preload("res://assets/images/pokemons/rattata.svg")
+		enemySprite.texture = preload("res://assets/images/pokemons/pikachu.svg")
 		
 func _on_execute_button_pressed() -> void:
 	if show == false:

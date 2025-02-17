@@ -2,22 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://cvcmvav2amwoa" path="res://scenes/command_block.tscn" id="1_88lwd"]
 [ext_resource type="Script" path="res://scenes/available_commands.gd" id="1_a1sh3"]
+[ext_resource type="StyleBox" uid="uid://deqrhxd01qb80" path="res://scenes/command_panel.tres" id="1_pmte7"]
 [ext_resource type="Script" path="res://scenes/executable_area.gd" id="2_u47ph"]
 [ext_resource type="Texture2D" uid="uid://d4hldjijdhnvk" path="res://assets/images/play.svg" id="4_8a8ks"]
 [ext_resource type="FontFile" uid="uid://rw0lls2xhr1n" path="res://assets/assets/amorlate fonts2/Amorlate.ttf" id="4_e8ey8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47bxb"]
-bg_color = Color(0.532063, 0.563648, 0.719358, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.394973, 0.424865, 0.578959, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm6n5"]
 bg_color = Color(0.187385, 0.511312, 0.330009, 1)
@@ -121,7 +109,7 @@ offset_left = 330.0
 offset_top = 41.0
 offset_right = 766.0
 offset_bottom = 417.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_47bxb")
+theme_override_styles/panel = ExtResource("1_pmte7")
 
 [node name="AvailableCommands" type="VBoxContainer" parent="Panel"]
 layout_mode = 1

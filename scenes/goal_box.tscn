@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://csxde0to81lqo"]
+[gd_scene load_steps=5 format=3 uid="uid://csxde0to81lqo"]
 
 [ext_resource type="Script" path="res://scripts/goal_box.gd" id="1_ay425"]
 [ext_resource type="Texture2D" uid="uid://c47gvgb6dnnti" path="res://assets/images/pokemons/pikachu.svg" id="2_knfeq"]
+[ext_resource type="AudioStream" uid="uid://dkahropv1kbun" path="res://assets/music/Pokemon Sword and Shield - Capture Sound Effect [Free Ringtone Download].mp3" id="3_lvcrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8ib2"]
 size = Vector2(62, 62)
@@ -15,5 +16,8 @@ texture = ExtResource("2_knfeq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x8ib2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lvcrn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

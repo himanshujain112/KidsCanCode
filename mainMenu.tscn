@@ -1,13 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://x1v0a0xuugs1"]
+[gd_scene load_steps=22 format=3 uid="uid://x1v0a0xuugs1"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_4mw3x"]
-[ext_resource type="Script" path="res://scenes/ui/white_bg.gd" id="1_uwikt"]
-[ext_resource type="Texture2D" uid="uid://bsh3sedyvig8e" path="res://assets/assets/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_4/2.png" id="2_pe4ri"]
 [ext_resource type="Script" path="res://scenes/ui/parallax_2d_2.gd" id="3_368wv"]
 [ext_resource type="Texture2D" uid="uid://dvasj1vcfk0eu" path="res://assets/assets/abstract-smooth-empty-grey-studio-well-use-as-backgroundbusiness-reportdigitalwebsite-templatebackdr.jpg" id="3_sejm5"]
 [ext_resource type="Texture2D" uid="uid://b0apdhbpddht7" path="res://assets/assets/Cloud Pack/Cloud 12.png" id="3_x4dk0"]
 [ext_resource type="Texture2D" uid="uid://bftnkta31oxsk" path="res://assets/assets/Cloud Pack/Cloud 1.png" id="4_omdkk"]
 [ext_resource type="Texture2D" uid="uid://ctaxeya7bhtka" path="res://assets/assets/Cloud Pack/Cloud 19.png" id="5_338bm"]
+[ext_resource type="Script" path="res://scripts/parallax_2d_3.gd" id="5_yppbl"]
 [ext_resource type="Texture2D" uid="uid://st4u4ta1yqf3" path="res://assets/assets/bird2.png" id="9_7uhoj"]
 [ext_resource type="Texture2D" uid="uid://k0iod4bvtil3" path="res://assets/assets/ButtonsText/ButtonText_Large_Blank_Square.png" id="10_2exgb"]
 [ext_resource type="Texture2D" uid="uid://8blu2hl1c2h5" path="res://assets/assets/BoxesBanners/Box_Blank_Rounded.png" id="10_v7fi2"]
@@ -16,12 +15,23 @@
 [ext_resource type="FontFile" uid="uid://rw0lls2xhr1n" path="res://assets/assets/amorlate fonts2/Amorlate.ttf" id="12_1ot7x"]
 [ext_resource type="Texture2D" uid="uid://dh5fmy4f61rvq" path="res://assets/assets/ButtonsText/ButtonText_Large_Orange_Round.png" id="12_5o4br"]
 [ext_resource type="Texture2D" uid="uid://cheohivpdxq64" path="res://assets/assets/ButtonsText/ButtonText_Large_GreyOutline_Round.png" id="13_0s2t5"]
+[ext_resource type="Script" path="res://leaderboard.gd" id="16_6ak0o"]
+[ext_resource type="StyleBox" uid="uid://deqrhxd01qb80" path="res://scenes/command_panel.tres" id="17_n130l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xx2k0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kwyjh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4a3h0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umy6y"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -33,50 +43,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4mw3x")
 
-[node name="whiteBg" type="Parallax2D" parent="."]
-scale = Vector2(0.68, 0.68)
-repeat_size = Vector2(770, 0)
-script = ExtResource("1_uwikt")
-
-[node name="Abstract-smooth-empty-grey-studio-well-use-as-backgroundbusiness-reportdigitalwebsite-templatebackdr" type="Sprite2D" parent="whiteBg"]
-position = Vector2(564.941, 318.647)
-scale = Vector2(0.226376, 0.211098)
+[node name="Abstract-smooth-empty-grey-studio-well-use-as-backgroundbusiness-reportdigitalwebsite-templatebackdr" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -83.0
+offset_top = -28.0
+offset_right = 5731.0
+offset_bottom = 3567.0
+scale = Vector2(0.153936, 0.143547)
 texture = ExtResource("3_sejm5")
-metadata/_edit_lock_ = true
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 repeat_size = Vector2(770, 0)
 script = ExtResource("3_368wv")
-
-[node name="blueCloud1" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(653, 101)
-scale = Vector2(0.321181, 0.29769)
-texture = ExtResource("2_pe4ri")
-metadata/_edit_lock_ = true
-
-[node name="blueCloud2" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(130.75, 317.069)
-scale = Vector2(0.299479, 0.302046)
-texture = ExtResource("2_pe4ri")
-metadata/_edit_lock_ = true
-
-[node name="whiteCloud1" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(105, 137)
-scale = Vector2(1.11288, 1.06563)
-texture = ExtResource("3_x4dk0")
-metadata/_edit_lock_ = true
-
-[node name="whiteCloud2" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(615, 296)
-scale = Vector2(1.93997, 2.00663)
-texture = ExtResource("4_omdkk")
-metadata/_edit_lock_ = true
-
-[node name="whiteCloud3" type="Sprite2D" parent="Parallax2D2"]
-position = Vector2(367, 87)
-scale = Vector2(2.23673, 2.79935)
-texture = ExtResource("5_338bm")
-metadata/_edit_lock_ = true
 
 [node name="birds2" type="Sprite2D" parent="Parallax2D2"]
 modulate = Color(1, 1, 1, 0.639216)
@@ -103,6 +81,28 @@ show_behind_parent = true
 position = Vector2(238.032, 488.034)
 scale = Vector2(0.2222, 0.298564)
 texture = ExtResource("9_7uhoj")
+metadata/_edit_lock_ = true
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+repeat_size = Vector2(770, 0)
+script = ExtResource("5_yppbl")
+
+[node name="whiteCloud1" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(105, 137)
+scale = Vector2(1.11288, 1.06563)
+texture = ExtResource("3_x4dk0")
+metadata/_edit_lock_ = true
+
+[node name="whiteCloud2" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(615, 296)
+scale = Vector2(1.93997, 2.00663)
+texture = ExtResource("4_omdkk")
+metadata/_edit_lock_ = true
+
+[node name="whiteCloud3" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(367, 87)
+scale = Vector2(2.23673, 2.79935)
+texture = ExtResource("5_338bm")
 metadata/_edit_lock_ = true
 
 [node name="menuRct" type="TextureRect" parent="."]
@@ -164,17 +164,17 @@ metadata/_edit_lock_ = true
 
 [node name="Label2" type="Label" parent="menuRct/MarginContainer/VBoxContainer/CreditButton"]
 layout_mode = 2
-offset_left = 258.167
-offset_top = 64.1666
-offset_right = 614.167
-offset_bottom = 171.167
+offset_left = 135.135
+offset_top = 58.1853
+offset_right = 579.135
+offset_bottom = 165.186
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.890196, 0.890196, 0.890196, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("12_1ot7x")
 theme_override_font_sizes/font_size = 80
-text = "Credits"
+text = "rankings"
 metadata/_edit_lock_ = true
 
 [node name="QuitButton" type="TextureButton" parent="menuRct/MarginContainer/VBoxContainer"]
@@ -228,6 +228,71 @@ text = "Main Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 548.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.625597, 0.625597, 0.625597, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_1ot7x")
+theme_override_font_sizes/font_size = 45
+text = "Kidscancode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="leaderboard" type="CanvasLayer" parent="."]
+script = ExtResource("16_6ak0o")
+
+[node name="Panel" type="Panel" parent="leaderboard"]
+offset_left = 106.0
+offset_top = 94.0
+offset_right = 652.0
+offset_bottom = 420.0
+theme_override_styles/panel = ExtResource("17_n130l")
+
+[node name="Label" type="Label" parent="leaderboard/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_top = 15.0
+offset_right = 66.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+theme_override_fonts/font = ExtResource("12_1ot7x")
+theme_override_font_sizes/font_size = 30
+text = "Leaderboard"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="leaderboard/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 157.0
+offset_top = 59.0
+offset_right = -121.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="leaderboard"]
+offset_left = 583.0
+offset_top = 109.0
+offset_right = 627.0
+offset_bottom = 140.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_umy6y")
+text = "Hide"
+
 [connection signal="pressed" from="menuRct/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="menuRct/MarginContainer/VBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="menuRct/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="leaderboard/Button" to="leaderboard" method="_on_button_pressed"]

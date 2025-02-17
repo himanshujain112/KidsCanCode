@@ -1,22 +1,22 @@
-[gd_scene load_steps=17 format=4 uid="uid://cegm2df01dftx"]
+[gd_scene load_steps=17 format=4 uid="uid://b6khk71v4xnng"]
 
-[ext_resource type="Script" path="res://levels/level_1.gd" id="1_ft5fv"]
-[ext_resource type="Texture2D" uid="uid://cps71tbiuc50i" path="res://assets/images/wall.svg" id="1_y5ctp"]
-[ext_resource type="Texture2D" uid="uid://csdqxm1oq13fa" path="res://assets/images/tile.svg" id="2_idoff"]
-[ext_resource type="PackedScene" uid="uid://ckll7h3u7jlkk" path="res://scenes/player.tscn" id="3_m1174"]
-[ext_resource type="FontFile" uid="uid://rw0lls2xhr1n" path="res://assets/assets/amorlate fonts2/Amorlate.ttf" id="4_cybu8"]
-[ext_resource type="PackedScene" uid="uid://bvwghyw78amya" path="res://scenes/command_panel.tscn" id="4_ub7hi"]
-[ext_resource type="PackedScene" uid="uid://csxde0to81lqo" path="res://scenes/goal_box.tscn" id="6_3ex08"]
+[ext_resource type="Script" path="res://levels/level_4.gd" id="1_0hq2o"]
+[ext_resource type="Texture2D" uid="uid://cps71tbiuc50i" path="res://assets/images/wall.svg" id="2_378wk"]
+[ext_resource type="Texture2D" uid="uid://csdqxm1oq13fa" path="res://assets/images/tile.svg" id="3_x1l85"]
+[ext_resource type="FontFile" uid="uid://rw0lls2xhr1n" path="res://assets/assets/amorlate fonts2/Amorlate.ttf" id="4_yfgq3"]
+[ext_resource type="PackedScene" uid="uid://bvwghyw78amya" path="res://scenes/command_panel.tscn" id="5_sejvu"]
+[ext_resource type="PackedScene" uid="uid://csxde0to81lqo" path="res://scenes/goal_box.tscn" id="6_o5f4d"]
+[ext_resource type="PackedScene" uid="uid://ckll7h3u7jlkk" path="res://scenes/player.tscn" id="7_yi4fd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxxok"]
-texture = ExtResource("1_y5ctp")
+texture = ExtResource("2_378wk")
 texture_region_size = Vector2i(72, 72)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36, -36, 36, -36, 36, 36, -36, 36)
 0:0/0/custom_data_0 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ww3b0"]
-texture = ExtResource("2_idoff")
+texture = ExtResource("3_x1l85")
 texture_region_size = Vector2i(72, 72)
 0:0/0 = 0
 
@@ -130,8 +130,8 @@ _data = {
 "cmdPanelslideout": SubResource("Animation_lqth3")
 }
 
-[node name="level1" type="Node"]
-script = ExtResource("1_ft5fv")
+[node name="level4" type="Node"]
+script = ExtResource("1_0hq2o")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -142,8 +142,7 @@ grow_vertical = 2
 color = Color(0.93385, 0.949374, 0.901976, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAQAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAAAAAAAAAAABAAIAAQAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAQAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAQAAAAAAAAABAAQAAAAAAAAAAAACAAQAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAQAAAAAAAAADAAMAAAAAAAAAAAACAAMAAQAAAAAAAAACAAIAAAAAAAAAAAACAAEAAQAAAAAAAAABAAIAAQAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAQAAAAAAAAADAAIAAAAAAAAAAAADAAEAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAAAAAAAAAAABAAEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_frb3t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -153,7 +152,6 @@ offset_left = 684.0
 offset_top = 7.0
 offset_right = 753.0
 offset_bottom = 38.0
-theme_override_colors/font_color = Color(0.890799, 0.890802, 0.888538, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_886uo")
 text = "Show"
 
@@ -171,57 +169,58 @@ offset_top = 108.0
 offset_right = 674.0
 offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_cybu8")
+theme_override_fonts/font = ExtResource("4_yfgq3")
 theme_override_font_sizes/font_size = 20
 text = "Instructions"
 uppercase = true
 
 [node name="instructions2" type="Label" parent="CanvasLayer"]
-offset_left = 452.0
-offset_top = 256.0
-offset_right = 735.0
-offset_bottom = 301.0
+offset_left = 460.0
+offset_top = 231.0
+offset_right = 745.0
+offset_bottom = 290.0
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
-theme_override_fonts/font = ExtResource("4_cybu8")
+theme_override_fonts/font = ExtResource("4_yfgq3")
 theme_override_font_sizes/font_size = 15
 text = "Press Reset Button to restart
- the  level."
+the level."
 horizontal_alignment = 1
 
 [node name="instructions3" type="Label" parent="CanvasLayer"]
-offset_left = 467.0
-offset_top = 155.0
-offset_right = 752.0
-offset_bottom = 214.0
+offset_left = 460.0
+offset_top = 156.0
+offset_right = 747.0
+offset_bottom = 215.0
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
-theme_override_fonts/font = ExtResource("4_cybu8")
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("4_yfgq3")
+theme_override_font_sizes/font_size = 18
 text = "Press Show Button to Open 
           Commands Menu."
-
-[node name="level" type="Label" parent="CanvasLayer"]
-offset_left = 479.0
-offset_top = 9.0
-offset_right = 582.0
-offset_bottom = 43.0
-theme_override_colors/font_color = Color(0.952941, 0.580392, 0, 1)
-theme_override_fonts/font = ExtResource("4_cybu8")
-theme_override_font_sizes/font_size = 25
-text = "Level 1"
+horizontal_alignment = 1
 
 [node name="instructions4" type="Label" parent="CanvasLayer"]
-offset_left = 457.0
-offset_top = 342.0
-offset_right = 742.0
-offset_bottom = 401.0
+offset_left = 462.0
+offset_top = 300.0
+offset_right = 747.0
+offset_bottom = 359.0
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
-theme_override_fonts/font = ExtResource("4_cybu8")
+theme_override_fonts/font = ExtResource("4_yfgq3")
 theme_override_font_sizes/font_size = 15
 text = "Reset Commands if not reached 
           the Pokemon."
 horizontal_alignment = 1
 
-[node name="CommandPanel" parent="." instance=ExtResource("4_ub7hi")]
+[node name="level" type="Label" parent="CanvasLayer"]
+offset_left = 476.0
+offset_top = 13.0
+offset_right = 583.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.952941, 0.580392, 0, 1)
+theme_override_fonts/font = ExtResource("4_yfgq3")
+theme_override_font_sizes/font_size = 25
+text = "Level 4"
+
+[node name="CommandPanel" parent="." instance=ExtResource("5_sejvu")]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -229,11 +228,11 @@ libraries = {
 "": SubResource("AnimationLibrary_02gw0")
 }
 
-[node name="goalBox" parent="." instance=ExtResource("6_3ex08")]
-position = Vector2(180, 323)
+[node name="goalBox" parent="." instance=ExtResource("6_o5f4d")]
+position = Vector2(395, 182)
 
-[node name="player" parent="." instance=ExtResource("3_m1174")]
-position = Vector2(181, 109)
+[node name="player" parent="." instance=ExtResource("7_yi4fd")]
+position = Vector2(178, 254)
 tile_size = 72
 
 [connection signal="pressed" from="CanvasLayer/ExecuteButton" to="." method="_on_execute_button_pressed"]

@@ -8,7 +8,7 @@ var show = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.connect("executionStarted", hidethepanel)
-	GameManager.current_level_index = 2
+	GameManager.current_level_index = 4
 	levelLabel.text = "Level "+ str(GameManager.current_level_index)
 	command_panel.visible = false
 	GameManager.connect("obstacleAhead", Callable(self, "_on_obstacle_ahead"))

@@ -2,4 +2,4 @@ extends Parallax2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.scroll_offset.x -= 100 * delta
+	self.scroll_offset.x -= 25 * delta
