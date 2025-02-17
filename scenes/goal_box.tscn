@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://csxde0to81lqo"]
+
+[ext_resource type="Script" path="res://scripts/goal_box.gd" id="1_ay425"]
+[ext_resource type="Texture2D" uid="uid://npshlhw36pc" path="res://assets/vegeta.png" id="2_t1m72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8ib2"]
+size = Vector2(62, 62)
+
+[node name="goalBox" type="Area2D"]
+script = ExtResource("1_ay425")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_t1m72")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x8ib2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
