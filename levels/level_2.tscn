@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://voxboh1kye05"]
+[gd_scene load_steps=17 format=4 uid="uid://ciaj5iuh4oqol"]
 
 [ext_resource type="Script" path="res://levels/level_2.gd" id="1_h3nls"]
 [ext_resource type="Texture2D" uid="uid://cps71tbiuc50i" path="res://assets/images/wall.svg" id="2_ns1bg"]
 [ext_resource type="Texture2D" uid="uid://csdqxm1oq13fa" path="res://assets/images/tile.svg" id="3_vxwg3"]
+[ext_resource type="FontFile" uid="uid://rw0lls2xhr1n" path="res://assets/assets/amorlate fonts2/Amorlate.ttf" id="4_ojv2o"]
 [ext_resource type="PackedScene" uid="uid://ckll7h3u7jlkk" path="res://scenes/player.tscn" id="4_wff51"]
 [ext_resource type="PackedScene" uid="uid://bvwghyw78amya" path="res://scenes/command_panel.tscn" id="5_6s3n2"]
 [ext_resource type="PackedScene" uid="uid://csxde0to81lqo" path="res://scenes/goal_box.tscn" id="6_1ksg2"]
@@ -168,6 +169,7 @@ offset_top = 108.0
 offset_right = 674.0
 offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ojv2o")
 theme_override_font_sizes/font_size = 20
 text = "Instructions"
 uppercase = true
@@ -177,30 +179,46 @@ offset_left = 465.0
 offset_top = 151.0
 offset_right = 750.0
 offset_bottom = 210.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 18
-text = "Press Reset Button to restart the 
-                         level."
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_ojv2o")
+theme_override_font_sizes/font_size = 15
+text = "Press Reset Button to restart
+the level."
+horizontal_alignment = 1
 
 [node name="instructions3" type="Label" parent="CanvasLayer"]
-offset_left = 464.0
-offset_top = 233.0
-offset_right = 749.0
-offset_bottom = 292.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 468.0
+offset_top = 228.0
+offset_right = 739.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_ojv2o")
 theme_override_font_sizes/font_size = 18
 text = "Press Show Button to Open 
           Commands Menu."
+horizontal_alignment = 1
 
 [node name="instructions4" type="Label" parent="CanvasLayer"]
 offset_left = 462.0
 offset_top = 300.0
 offset_right = 747.0
 offset_bottom = 359.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_ojv2o")
+theme_override_font_sizes/font_size = 15
 text = "Reset Commands if not reached 
           the Pokemon."
+horizontal_alignment = 1
+
+[node name="level" type="Label" parent="CanvasLayer"]
+offset_left = 476.0
+offset_top = 13.0
+offset_right = 583.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.952941, 0.580392, 0, 1)
+theme_override_fonts/font = ExtResource("4_ojv2o")
+theme_override_font_sizes/font_size = 25
+text = "Level 2"
 
 [node name="CommandPanel" parent="." instance=ExtResource("5_6s3n2")]
 visible = false

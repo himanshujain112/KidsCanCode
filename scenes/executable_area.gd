@@ -19,5 +19,8 @@ func _get_drag_data(_at_position: Vector2):
 	if get_child_count() == 0:
 		return
 func _on_button_pressed() -> void:
+	#var anim = get_parent().get_parent().get_node("AnimationPlayer").play("cmdPanelslideout")
+	#await anim.animation_finished
+	GameManager.emit_signal("executionStarted")
 	GameManager.execute_commands()
 	clear_commands()

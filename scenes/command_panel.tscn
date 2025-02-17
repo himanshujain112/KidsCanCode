@@ -1,12 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvwghyw78amya"]
+[gd_scene load_steps=12 format=3 uid="uid://bvwghyw78amya"]
 
 [ext_resource type="PackedScene" uid="uid://cvcmvav2amwoa" path="res://scenes/command_block.tscn" id="1_88lwd"]
 [ext_resource type="Script" path="res://scenes/available_commands.gd" id="1_a1sh3"]
 [ext_resource type="Script" path="res://scenes/executable_area.gd" id="2_u47ph"]
 [ext_resource type="Texture2D" uid="uid://d4hldjijdhnvk" path="res://assets/images/play.svg" id="4_8a8ks"]
+[ext_resource type="FontFile" uid="uid://rw0lls2xhr1n" path="res://assets/assets/amorlate fonts2/Amorlate.ttf" id="4_e8ey8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47bxb"]
 bg_color = Color(0.532063, 0.563648, 0.719358, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.394973, 0.424865, 0.578959, 1)
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
@@ -14,33 +20,44 @@ corner_radius_bottom_left = 25
 corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm6n5"]
-bg_color = Color(0.263731, 0.696181, 0.454719, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+bg_color = Color(0.187385, 0.511312, 0.330009, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_welnc"]
-bg_color = Color(0.751623, 0.806589, 0.546356, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+bg_color = Color(0.596855, 0.651527, 0.012885, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd88h"]
-bg_color = Color(0.840576, 0.477485, 0.520115, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+bg_color = Color(0.772681, 0.389854, 0.44058, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8anda"]
+bg_color = Color(0.539577, 0.26338, 0.860792, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
@@ -105,6 +122,12 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dd88h")
 command = "Attack"
 
+[node name="CommandBlock5" parent="Panel/AvailableCommands" instance=ExtResource("1_88lwd")]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8anda")
+command = "Condition"
+
 [node name="ExecutableArea" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 11
@@ -121,17 +144,19 @@ script = ExtResource("2_u47ph")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.448
 anchor_right = 0.5
-offset_left = -61.0
-offset_top = 5.0
-offset_right = 61.0
-offset_bottom = 28.0
+offset_left = -77.328
+offset_top = 10.0
+offset_right = 91.0
+offset_bottom = 37.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_e8ey8")
+theme_override_font_sizes/font_size = 20
 text = "Execution Block"
 horizontal_alignment = 1
 uppercase = true

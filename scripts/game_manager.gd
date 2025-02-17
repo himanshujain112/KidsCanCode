@@ -1,6 +1,7 @@
 extends Node
 signal obstacleAhead
-
+signal executionStarted
+signal startExecution
 var levels = [
 	"res://scenes/level1.tscn",
 	"res://scenes/level2.tscn",
@@ -13,7 +14,6 @@ var player
 var resetCommands = false
 
 func _ready() -> void:
-	current_level_index = 0
 	# Get the player node from the group "player"
 	player = get_tree().get_first_node_in_group("player")
 

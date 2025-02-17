@@ -3,10 +3,12 @@ extends Node
 @onready var player = $AnimationPlayer
 @onready var command_panel = $CommandPanel
 var show = false
+@onready var levelLabel = $CanvasLayer/level
 @onready var enemySprite = $goalBox/Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.current_level_index = 2
+	levelLabel.text = "Level "+ str(GameManager.current_level_index)
 	command_panel.visible = false
 	GameManager.connect("obstacleAhead", Callable(self, "_on_obstacle_ahead"))
 	if is_instance_valid(enemySprite):
