@@ -1,0 +1,181 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtypesh76wvgt"]
+
+[ext_resource type="Texture2D" uid="uid://d1n41fyu46u56" path="res://assets/BoxesBanners/Box_WhiteOutline_Rounded.png" id="1_xly61"]
+[ext_resource type="Texture2D" uid="uid://du0vqixa77lgm" path="res://assets/BoxesBanners/Banner_WhiteOutine.png" id="2_xqxls"]
+[ext_resource type="FontFile" uid="uid://rw0lls2xhr1n" path="res://assets/amorlate fonts2/Amorlate.ttf" id="3_0ou7j"]
+[ext_resource type="Texture2D" uid="uid://dh5fmy4f61rvq" path="res://assets/ButtonsText/ButtonText_Large_Orange_Round.png" id="4_2ki0u"]
+[ext_resource type="Texture2D" uid="uid://dl30g85dtkpnk" path="res://assets/ButtonsText/ButtonText_Large_Blank_Round.png" id="4_15qur"]
+[ext_resource type="Texture2D" uid="uid://csfi5f80dh341" path="res://assets/Icons/Icon_Small_StarGrey.png" id="4_c3xsd"]
+[ext_resource type="Texture2D" uid="uid://bbay8y8to7fft" path="res://assets/ButtonsText/ButtonText_Large_Green_Round.png" id="5_y68un"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ogd5n"]
+load_path = "res://.godot/imported/ButtonText_Large_Orange_Round.png-20c128676f60abbe2cf98f1b5d8b85d8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f1fn2"]
+load_path = "res://.godot/imported/ButtonText_Large_Blank_Round.png-a80d97be0418a6ff095af026a6e9b5ac.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6v3g"]
+load_path = "res://.godot/imported/ButtonText_Large_Blank_Round.png-a80d97be0418a6ff095af026a6e9b5ac.ctex"
+
+[node name="pauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pauseMenuBg" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 357.0
+offset_top = 138.0
+offset_right = 729.0
+offset_bottom = 1014.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("1_xly61")
+
+[node name="pausedTxt" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 393.0
+offset_top = 54.0
+offset_right = 498.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_xqxls")
+
+[node name="pausedLbl" type="Label" parent="CanvasLayer/pausedTxt"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 71.0
+offset_right = 361.0
+offset_bottom = 125.0
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.701961, 0.701961, 0.701961, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_0ou7j")
+theme_override_font_sizes/font_size = 40
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="star" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 705.0
+offset_top = 91.0
+offset_right = -136.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("4_c3xsd")
+
+[node name="star2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 341.0
+offset_top = 88.0
+offset_right = -500.0
+offset_bottom = -281.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("4_c3xsd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 430.0
+offset_top = 237.0
+offset_right = 1589.0
+offset_bottom = 1306.0
+scale = Vector2(0.24, 0.24)
+theme_override_constants/separation = 35
+
+[node name="resumeBtn" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_2ki0u")
+texture_pressed = ExtResource("4_2ki0u")
+texture_hover = SubResource("CompressedTexture2D_ogd5n")
+
+[node name="resumeLbl" type="Label" parent="CanvasLayer/VBoxContainer/resumeBtn"]
+layout_mode = 0
+offset_left = -366.667
+offset_top = -25.0
+offset_right = 583.333
+offset_bottom = 183.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.703808, 0.703808, 0.703808, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_0ou7j")
+theme_override_font_sizes/font_size = 80
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restartBtn" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_15qur")
+texture_pressed = SubResource("CompressedTexture2D_f1fn2")
+texture_hover = SubResource("CompressedTexture2D_d6v3g")
+
+[node name="restartLbl" type="Label" parent="CanvasLayer/VBoxContainer/restartBtn"]
+layout_mode = 0
+offset_left = -358.333
+offset_top = -25.0
+offset_right = 591.667
+offset_bottom = 183.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.273873, 0.273873, 0.273873, 1)
+theme_override_colors/font_shadow_color = Color(0.701961, 0.701961, 0.701961, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_0ou7j")
+theme_override_font_sizes/font_size = 80
+text = "Restart
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mainMenuBtn" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_y68un")
+
+[node name="mainMenuLbl" type="Label" parent="CanvasLayer/VBoxContainer/mainMenuBtn"]
+layout_mode = 0
+offset_left = -370.833
+offset_top = -33.3334
+offset_right = 579.167
+offset_bottom = 174.667
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.701961, 0.701961, 0.701961, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_0ou7j")
+theme_override_font_sizes/font_size = 80
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
