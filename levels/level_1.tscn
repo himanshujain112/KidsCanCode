@@ -1,0 +1,145 @@
+[gd_scene load_steps=14 format=4 uid="uid://cegm2df01dftx"]
+
+[ext_resource type="Script" path="res://levels/level_1.gd" id="1_ft5fv"]
+[ext_resource type="Texture2D" uid="uid://cps71tbiuc50i" path="res://assets/images/wall.svg" id="1_y5ctp"]
+[ext_resource type="Texture2D" uid="uid://csdqxm1oq13fa" path="res://assets/images/tile.svg" id="2_idoff"]
+[ext_resource type="PackedScene" uid="uid://ckll7h3u7jlkk" path="res://scenes/player.tscn" id="3_m1174"]
+[ext_resource type="PackedScene" uid="uid://bvwghyw78amya" path="res://scenes/command_panel.tscn" id="4_ub7hi"]
+[ext_resource type="PackedScene" uid="uid://csxde0to81lqo" path="res://scenes/goal_box.tscn" id="6_3ex08"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxxok"]
+texture = ExtResource("1_y5ctp")
+texture_region_size = Vector2i(72, 72)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36, -38, 36, -38, 36, 34.25, -36, 33.5)
+0:0/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ww3b0"]
+texture = ExtResource("2_idoff")
+texture_region_size = Vector2i(72, 72)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36, -38, 36, -38, 36, 34.25, -36, 33.5)
+
+[sub_resource type="TileSet" id="TileSet_frb3t"]
+tile_size = Vector2i(72, 72)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "obstacle"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_mxxok")
+sources/1 = SubResource("TileSetAtlasSource_ww3b0")
+
+[sub_resource type="Animation" id="Animation_4fku7"]
+resource_name = "cmdPanelslidein"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CommandPanel:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CommandPanel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_da0jt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CommandPanel:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lqth3"]
+resource_name = "cmdPanelslideout"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CommandPanel:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(500, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CommandPanel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_02gw0"]
+_data = {
+"RESET": SubResource("Animation_da0jt"),
+"cmdPanelslidein": SubResource("Animation_4fku7"),
+"cmdPanelslideout": SubResource("Animation_lqth3")
+}
+
+[node name="level1" type="Node"]
+script = ExtResource("1_ft5fv")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.733333, 1, 1, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAQAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAAAAAAAAAAABAAIAAQAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_frb3t")
+
+[node name="player" parent="." instance=ExtResource("3_m1174")]
+position = Vector2(181, 109)
+tile_size = 72
+
+[node name="CommandPanel" parent="." instance=ExtResource("4_ub7hi")]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_02gw0")
+}
+
+[node name="goalBox" parent="." instance=ExtResource("6_3ex08")]
+position = Vector2(180, 323)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ExecuteButton" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="CanvasLayer/ExecuteButton" to="." method="_on_execute_button_pressed"]

@@ -12,9 +12,9 @@ func _ready():
 # Command execution functions return a coroutine if using await.
 func move_forward():
 	print("Moving forward")
-	if check_obstacle_ahead():
-		print("Obstacle ahead")
-		return
+	#if check_obstacle_ahead():
+	#	print("Obstacle ahead")
+	#	return
 	position += facing * tile_size
 
 func turn_left() -> void:

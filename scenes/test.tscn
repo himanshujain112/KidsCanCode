@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ddffws4hucfad" path="res://assets/[64x64] Dungeon Bricks Plain.png" id="1_x178b"]
 [ext_resource type="PackedScene" uid="uid://ckll7h3u7jlkk" path="res://scenes/player.tscn" id="2_hbbm6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbo26"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pjyi"]
 texture = ExtResource("1_x178b")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -71,7 +71,7 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 custom_data_layer_0/name = "obstacle"
 custom_data_layer_0/type = 1
-sources/2 = SubResource("TileSetAtlasSource_dbo26")
+sources/2 = SubResource("TileSetAtlasSource_5pjyi")
 
 [node name="Node" type="Node"]
 

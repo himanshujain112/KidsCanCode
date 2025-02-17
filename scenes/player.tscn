@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckll7h3u7jlkk"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_qgnbq"]
-[ext_resource type="Texture2D" uid="uid://03ckqiyoygm8" path="res://assets/frieza resize.png" id="2_odnwl"]
+[ext_resource type="Texture2D" uid="uid://byt5i5tahiftm" path="res://assets/images/nav-arrow-backward.svg" id="2_of1gn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxbie"]
 size = Vector2(47, 57)
@@ -10,8 +10,7 @@ size = Vector2(47, 57)
 script = ExtResource("1_qgnbq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_odnwl")
+texture = ExtResource("2_of1gn")
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
