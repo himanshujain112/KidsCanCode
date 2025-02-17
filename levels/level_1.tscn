@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cegm2df01dftx"]
+[gd_scene load_steps=16 format=4 uid="uid://cegm2df01dftx"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_ft5fv"]
 [ext_resource type="Texture2D" uid="uid://cps71tbiuc50i" path="res://assets/images/wall.svg" id="1_y5ctp"]
@@ -11,14 +11,13 @@
 texture = ExtResource("1_y5ctp")
 texture_region_size = Vector2i(72, 72)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36, -38, 36, -38, 36, 34.25, -36, 33.5)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36, -36, 36, -36, 36, 36, -36, 36)
 0:0/0/custom_data_0 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ww3b0"]
 texture = ExtResource("2_idoff")
 texture_region_size = Vector2i(72, 72)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36, -38, 36, -38, 36, 34.25, -36, 33.5)
 
 [sub_resource type="TileSet" id="TileSet_frb3t"]
 tile_size = Vector2i(72, 72)
@@ -106,6 +105,30 @@ _data = {
 "cmdPanelslideout": SubResource("Animation_lqth3")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_886uo"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2c7y"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 4.0
+expand_margin_top = 3.0
+expand_margin_right = 4.0
+expand_margin_bottom = 3.0
+
 [node name="level1" type="Node"]
 script = ExtResource("1_ft5fv")
 
@@ -115,7 +138,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.733333, 1, 1, 1)
+color = Color(0.93385, 0.949374, 0.901976, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAQAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAAAAAAAAAAABAAIAAQAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAQAAAAAAAAAAAA=")
@@ -126,7 +149,6 @@ position = Vector2(181, 109)
 tile_size = 72
 
 [node name="CommandPanel" parent="." instance=ExtResource("4_ub7hi")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -139,10 +161,20 @@ position = Vector2(180, 323)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ExecuteButton" type="Button" parent="CanvasLayer"]
-offset_left = 693.0
-offset_top = 12.0
-offset_right = 762.0
-offset_bottom = 43.0
-text = "Execute"
+offset_left = 684.0
+offset_top = 7.0
+offset_right = 753.0
+offset_bottom = 38.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_886uo")
+text = "Show"
+
+[node name="ResetButton" type="Button" parent="CanvasLayer"]
+offset_left = 615.0
+offset_top = 9.0
+offset_right = 662.0
+offset_bottom = 36.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_b2c7y")
+text = " Reset "
 
 [connection signal="pressed" from="CanvasLayer/ExecuteButton" to="." method="_on_execute_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ResetButton" to="." method="_on_reset_button_pressed"]
